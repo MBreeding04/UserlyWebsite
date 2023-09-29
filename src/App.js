@@ -7,6 +7,14 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import logo from './Assets/Logo/LogoTransparent.png'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import {
+  Route,
+  NavLink,
+  HashRouter,
+  Routes
+} from "react-router-dom";
+
+import Home from './Modules/home/home'
 
 const Leaguefont = createTheme({
   typography: {
@@ -14,11 +22,7 @@ const Leaguefont = createTheme({
   },
 });
 
-const OnestFont = createTheme({
-  typography: {
-    fontFamily: ['Onest', 'sans-serif'].join(",")
-  },
-});
+
 
 const pallete = {
   aqua: '#4B636D',
@@ -29,34 +33,43 @@ const pallete = {
 function App() {
   return (
     <div className='Main-content'>
+      <HashRouter>
       <div className='NavBar'>
-        <Typography></Typography>
         <ThemeProvider theme={Leaguefont}>
           <CssBaseline />
+          <NavLink to="/F.A.Q">
           <Button variant="contained" sx={{
             backgroundColor: pallete.aqua,
             ':hover': {
               bgcolor: pallete.darkBlue,
               color: 'white'
             },
-            margin: 2
-          }}> <Typography fontSize={20}>F.A.Q</Typography></Button>
+            margin: 2,
+            paddingX: 3,
+            minWidth: 125
+          }}> <Typography fontSize={20}>F.A.Q</Typography></Button></NavLink>
+          <NavLink to="/Contact">
           <Button variant="contained" sx={{
             backgroundColor: pallete.aqua,
             ':hover': {
               bgcolor: pallete.darkBlue,
               color: 'white'
             },
-            margin: 2
-          }}><Typography fontSize={20}>Contact</Typography></Button>
+            margin: 2,
+            paddingX: 3,
+            minWidth: 125
+          }}><Typography fontSize={20}>Contact</Typography></Button></NavLink>
+          <NavLink to="/Purchase">
           <Button variant="contained" sx={{
             backgroundColor: pallete.aqua,
             ':hover': {
               bgcolor: pallete.darkBlue,
               color: 'white'
             },
-            margin: 2
-          }}><Typography fontSize={20}>Purchase</Typography></Button>
+            margin: 2,
+            paddingX: 3,
+            minWidth: 125
+          }}><Typography fontSize={20}>Purchase</Typography></Button></NavLink>
         </ThemeProvider>
         <IconButton>
           <GitHubIcon fontSize='large'></GitHubIcon>
@@ -66,24 +79,22 @@ function App() {
         </IconButton>
       </div>
       <Divider sx={{ width: '95%', borderBottomWidth: 2, bgcolor: '#6C757D' }}></Divider>
-      <img src={logo} alt='Userly Logo' className='logo'></img>
+      <div className='clickableLogo'><NavLink to="/"><img src={logo} alt='Userly Logo' className='logo'></img></NavLink></div>
       <div className='body'>
         <Divider orientation="horizontal" sx={{
           marginLeft: 4, borderRightWidth: 2,
           bgcolor: '#6C757D'
         }} />
-        <div className='download'>
-          <Button variant='contained' sx={{
-            borderRadius: 6, ml: '13%',
-            mt: '10%', backgroundColor: pallete.darkBlue,
-            ':hover': {
-              bgcolor: '#06080A',
-              color: 'white'
-            }, height: '30%', width: "15%", fontSize: '100%'
-          }}><ThemeProvider theme={Leaguefont}> <Typography>Download</Typography> </ThemeProvider></Button>
-        </div>
-
+          <div className="content">
+            <Routes>
+              <Route path='/' element={<Home></Home>}/>
+              <Route path="/F.A.Q" element={<div></div>} />
+              <Route path="/Purchase" element={<div></div>} />
+              <Route path="/Contact" element={<div></div>} />
+            </Routes>
+          </div>
       </div>
+      </HashRouter>
     </div >
   );
 }
