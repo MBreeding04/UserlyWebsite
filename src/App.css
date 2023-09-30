@@ -2,6 +2,7 @@
   background-color: #C2D1D0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 .NavBar{
   display: flex;
@@ -35,19 +36,7 @@
   display: flex;
   width: 100%;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-  width: 20px;
-}
-::-webkit-scrollbar-track {
-  background-color: #C2D1D0;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #567583;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
-}
-::-webkit-scrollbar-thumb:vertical:hover{
-  
-  background-color: #4B636D
+  display: none;
 }
