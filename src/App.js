@@ -17,6 +17,7 @@ import {
 } from "react-router-dom";
 
 import Home from './Modules/home/home'
+import Purchase from './Modules/Purchase/Purchase'
 
 const Leaguefont = createTheme({
   typography: {
@@ -94,18 +95,18 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home></Home>} />
                 <Route path="/F.A.Q" element={<div></div>} />
-                <Route path="/Purchase" element={<div></div>} />
+                <Route path="/Purchase" element={<Purchase></Purchase>} />
                 <Route path="/Contact" element={<div></div>} />
               </Routes>
             </div>
           </div>
 
         </HashRouter>
-        {/* Footer copyright etc. */}<Box sx={{ bgcolor: '#04060A', display:'flex', flexDirection: 'row'}}>
+        {/* Footer copyright etc. */}<Box sx={{ bgcolor: '#04060A', display: 'flex', flexDirection: 'row' }}>
           <Divider orientation="horizontal" sx={{
-            marginLeft: 4,marginBottom: '2em', borderRightWidth: 2,
+            marginLeft: 4, marginBottom: '2em', borderRightWidth: 2,
             bgcolor: '#2E3F4C'
-          }} /><ThemeProvider theme={FiraCode}><Typography color='white'sx={{ml: '2em', marginY: '2em'}}>Copyright © Userly 2023. All Rights Reserved</Typography></ThemeProvider>
+          }} /><ThemeProvider theme={FiraCode}><Typography color='white' sx={{ ml: '2em', marginY: '2em' }}>Copyright © Userly 2023. All Rights Reserved</Typography></ThemeProvider>
         </Box>
       </div >
     </SimpleBar>

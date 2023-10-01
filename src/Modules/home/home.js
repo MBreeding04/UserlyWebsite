@@ -80,7 +80,7 @@ export default function Home() {
                         <ForwardIcon sx={{ mt: '2em',color:'white' }} style={{ fontSize: 60 }}></ForwardIcon>
                         <Box sx={{
                             p: '1em', backgroundColor: pallete.darkBlue, borderRadius: 2, maxWidth: '15em', display: 'flex',
-                            flexDirection: 'column', justifyContent: 'top', alignItems: 'center',
+                            flexDirection: 'column', justifyContent: 'top', alignItems: 'center', mr: 4 
                         }}>
                             <ThemeProvider theme={Leaguefont}><Typography color='#F5F5F5' variant='h3'> Why
                             </Typography></ThemeProvider><Typography color='#F5F5F5' variant="h6" align='center'>
@@ -98,7 +98,7 @@ export default function Home() {
                 }} />
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mb: '5em' }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '80em' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '70em', mr: 4 }}>
                         <ThemeProvider theme={Leaguefont}><Typography variant='h2' align='center' sx={{ mt: 8.5, color: '#F5F5F5' }}>The Big Picture</Typography></ThemeProvider>
                         <ThemeProvider theme={OnestFont}><Typography variant='h6' align='center' sx={{ mt: 8.5, color: '#F5F5F5' }}>We all have been there,
                             you need an account to play with your friends and you're not sure what account is the correct rank. Is it account X, Y, Z?
