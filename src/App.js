@@ -18,6 +18,8 @@ import {
 
 import Home from './Modules/home/home'
 import Purchase from './Modules/Purchase/Purchase'
+import FAQ from './Modules/F.A.Q/F.A.Q'
+import Contact from './Modules/Contact/Contact'
 
 const Leaguefont = createTheme({
   typography: {
@@ -46,7 +48,7 @@ function App() {
           <div className='NavBar'>
             <ThemeProvider theme={Leaguefont}>
               <CssBaseline />
-              <NavLink to="/F.A.Q">
+              <NavLink to="/FAQ">
                 <Button variant="contained" sx={{
                   backgroundColor: pallete.aqua,
                   ':hover': {
@@ -94,9 +96,9 @@ function App() {
             <div className="content">
               <Routes>
                 <Route path='/' element={<Home></Home>} />
-                <Route path="/F.A.Q" element={<div></div>} />
+                <Route path="/FAQ" element={<FAQ></FAQ>} />
                 <Route path="/Purchase" element={<Purchase></Purchase>} />
-                <Route path="/Contact" element={<div></div>} />
+                <Route path="/Contact" element={<Contact></Contact>} />
               </Routes>
             </div>
           </div>
