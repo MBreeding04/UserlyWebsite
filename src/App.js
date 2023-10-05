@@ -31,9 +31,6 @@ const FiraCode = createTheme({
     fontFamily: ['Fira Code', 'monospace'].join(",")
   },
 });
-
-
-
 const pallete = {
   aqua: '#4B636D',
   prismarine: '#C2D1D0',
@@ -82,10 +79,10 @@ function App() {
                   minWidth: 125
                 }}><Typography fontSize={20}>Purchase</Typography></Button></NavLink>
             </ThemeProvider>
-            <IconButton>
+            <IconButton href='https://github.com/MBreeding04'>
               <GitHubIcon fontSize='large'></GitHubIcon>
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/matthew-breeding-1a5182289/'>
               <LinkedInIcon fontSize='large'></LinkedInIcon>
             </IconButton>
           </div>

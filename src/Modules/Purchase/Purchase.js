@@ -59,7 +59,7 @@ export default function Purchase() {
         <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             <Divider orientation="horizontal" sx={{
                 marginLeft: 4, borderRightWidth: 2,
-                bgcolor: '#6C757D'
+                bgcolor: '#6C757D', zIndex:1
             }} />
             <div id='dot16' className='backroundHoversU'></div>
             <div id='dot17' className='backroundHoversM'></div>

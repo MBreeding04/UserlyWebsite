@@ -7,6 +7,9 @@ import Screenshot from '../../Assets/screenshots/Userly Demo.png'
 import Divider from '@mui/material/Divider';
 import Slide from '@mui/material/Slide';
 import { Fade } from "react-awesome-reveal";
+import {
+    NavLink
+} from "react-router-dom";
 import './home.css'
 const pallete = {
     aqua: '#4B636D',
@@ -38,11 +41,12 @@ export default function Home() {
             <div className='dividercontainer'>
                 <Divider orientation="horizontal" sx={{
                     marginLeft: 4, borderRightWidth: 2,
-                    bgcolor: '#6C757D'
+                    bgcolor: '#6C757D', zIndex:1
                 }} />
                 <Slide direction='down' in={true} timeout={1000}>
                     <div className='headerContainer'>
                         <div className='download'>
+                        <NavLink to='/Purchase'>
                             <Button variant='contained' sx={{
                                 borderRadius: 6,
                                 backgroundColor: pallete.darkBlue,
@@ -51,7 +55,7 @@ export default function Home() {
                                     color: 'white'
                                 }, fontSize: 100, width: 300, height: 70
                             }}><ThemeProvider theme={Leaguefont}>
-                                    <Typography>Buy Now</Typography> </ThemeProvider></Button>
+                                    <Typography>Buy Now</Typography></ThemeProvider></Button></NavLink>
                         </div>
                         <Box sx={{ backgroundColor: pallete.offprismarine, p: '1em', borderRadius: 2, boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px', zIndex: 1 }}>
                             <img className='demo' src={Screenshot} alt='Userly Demo'></img>

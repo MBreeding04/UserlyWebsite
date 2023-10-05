@@ -57,22 +57,26 @@
 .backroundHoversL {
     animation: VibrateL 2s ease 0s infinite normal forwards;
     opacity: 1 !important;
-    visibility: visible !important
+    visibility: visible !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .backroundHoversM {
     animation: VibrateM 2s ease 0s infinite normal forwards;
     opacity: 1 !important;
-    visibility: visible !important
+    visibility: visible !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .backroundHoversH {
     animation: VibrateH 2s ease 0s infinite normal forwards;
     opacity: 1 !important;
-    visibility: visible !important
+    visibility: visible !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .backroundHoversU{
     animation: VibrateU 2s ease 0s infinite normal forwards;
     opacity: 1 !important;
-    visibility: visible !important
+    visibility: visible !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 @keyframes VibrateL {
     0% {

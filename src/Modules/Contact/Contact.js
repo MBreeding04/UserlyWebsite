@@ -33,7 +33,7 @@ export default function Contact() {
             {/*height is only set because content does not fill up entire page, so we force it to fill up page*/}
             <Divider orientation="horizontal" sx={{
                 marginLeft: 4, borderRightWidth: 2,
-                bgcolor: '#6C757D'
+                bgcolor: '#6C757D', zIndex:1
             }} />
             <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', alignItems: 'center', alignContent: 'center', justifyContent: 'center' }}>
                 <div id='dot11' className='backroundHoversU'></div>
@@ -41,7 +41,7 @@ export default function Contact() {
                 <div id='dot13' className='backroundHoversL'></div>
                 <div id='dot14' className='backroundHoversH'></div>
                 <div id='dot15' className='backroundHoversU'></div>
-                <Slide direction='top' in={true}>
+                <Slide direction='down' in={true}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: pallete.offprismarine, borderRadius: 2, width: '1300px', justifyContent: 'center', alignContent: 'center', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px', zIndex:1 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' }}>
@@ -66,10 +66,10 @@ export default function Contact() {
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                             <ThemeProvider theme={Leaguefont}>
-                                <IconButton><GitHubIcon sx={{ fontSize: '40px' }}></GitHubIcon></IconButton><Typography color={'white'} sx={{ mt: '1.1em' }}>MBreeding04</Typography>
-                                <IconButton><LinkedInIcon sx={{ fontSize: '40px' }}></LinkedInIcon></IconButton><Typography color={'white'} sx={{ mt: '1.1em' }}>Matthew Breeding</Typography>
-                                <IconButton><PhoneIcon sx={{ fontSize: '40px' }}></PhoneIcon></IconButton><Typography color={'white'} sx={{ mt: '1.1em' }}>Available upon request</Typography>
-                                <IconButton><MailIcon sx={{ fontSize: '40px' }}></MailIcon></IconButton><Typography color={'white'} sx={{ mt: '1.1em' }}>03mattman@gmail.com</Typography>
+                                <GitHubIcon sx={{ fontSize: '40px',m:1 }}></GitHubIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>MBreeding04</Typography>
+                                <LinkedInIcon sx={{ fontSize: '40px',m:1 }}></LinkedInIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>Matthew Breeding</Typography>
+                                <PhoneIcon sx={{ fontSize: '40px',m:1 }}></PhoneIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>Available upon request</Typography>
+                                <MailIcon sx={{ fontSize: '40px',m:1 }}></MailIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>03mattman@gmail.com</Typography>
                             </ThemeProvider>
                         </Box>
                     </Box>
