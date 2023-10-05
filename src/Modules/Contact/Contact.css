@@ -1,0 +1,182 @@
+.Avatars{
+    aspect-ratio: auto;
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+}
+#dot11{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    background-color: #617077;
+    border-radius: 50%;
+    top: 29%;
+    right: 55%;
+    z-index: 0;
+}
+#dot12{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: #253339;
+    border-radius: 50%;
+    top: 57%;
+    right: 15%;
+    z-index: 0;
+}
+#dot13{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #101E25;
+    border-radius: 50%;
+    top: 8%;
+    right: 1%;
+    z-index: 0;
+}
+#dot14{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-color: #0f1d24;
+    border-radius: 50%;
+    top: 80%;
+    right: 70%;
+    z-index: 0;
+}
+#dot15{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: #1c3d4d;
+    border-radius: 50%;
+    top: 100%;
+    right: 1%;
+    z-index: 0;
+}
+.backroundHoversL {
+    animation: VibrateL 2s ease 0s infinite normal forwards;
+    opacity: 1 !important;
+    visibility: visible !important
+}
+.backroundHoversM {
+    animation: VibrateM 2s ease 0s infinite normal forwards;
+    opacity: 1 !important;
+    visibility: visible !important
+}
+.backroundHoversH {
+    animation: VibrateH 2s ease 0s infinite normal forwards;
+    opacity: 1 !important;
+    visibility: visible !important
+}
+.backroundHoversU{
+    animation: VibrateU 2s ease 0s infinite normal forwards;
+    opacity: 1 !important;
+    visibility: visible !important
+}
+@keyframes VibrateL {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-2px, 2px)
+    }
+
+    40% {
+        transform: translate(-2px, -2px)
+    }
+
+    60% {
+        transform: translate(2px, 2px)
+    }
+
+    80% {
+        transform: translate(2px, -2px)
+    }
+
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes VibrateM {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-4px, 4px)
+    }
+
+    40% {
+        transform: translate(-4px, -4px)
+    }
+
+    60% {
+        transform: translate(4px, 4px)
+    }
+
+    80% {
+        transform: translate(4px, 4px)
+    }
+
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes VibrateH {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-7px, 3px)
+    }
+
+    40% {
+        transform: translate(-3px, 1px)
+    }
+
+    60% {
+        transform: translate(1px, -2px)
+    }
+
+    80% {
+        transform: translate(7px, 4px)
+    }
+
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes VibrateU {
+    0% {
+        transform: translate(0)
+    }
+
+    15% {
+        transform: translate(-15px, 7px)
+    }
+
+    30% {
+        transform: translate(-7px, 3px)
+    }
+
+    45% {
+        transform: translate(-2px, 0px)
+    }
+
+    60% {
+        transform: translate(2px, -1px)
+    }
+    75% {
+        transform: translate(7px, -4px)
+    }
+    90% {
+        transform: translate(13px, 7px)
+    }
+
+    to {
+        transform: translate(0)
+    }
+}

@@ -89,7 +89,7 @@ function App() {
               <LinkedInIcon fontSize='large'></LinkedInIcon>
             </IconButton>
           </div>
-          <Divider sx={{ width: '95%', borderBottomWidth: 2, bgcolor: '#6C757D' }}></Divider>
+          <Divider sx={{ width: '95%', borderBottomWidth: 2, bgcolor: '#6C757D',zIndex:1 }}></Divider>
           <div className='clickableLogo'><NavLink to="/"><img src={logo} alt='Userly Logo' className='logo'></img></NavLink></div>
           <div className='body'>
             <div></div>
@@ -104,7 +104,7 @@ function App() {
           </div>
 
         </HashRouter>
-        {/* Footer copyright etc. */}<Box sx={{ bgcolor: '#04060A', display: 'flex', flexDirection: 'row' }}>
+        {/* Footer copyright etc. */}<Box sx={{ bgcolor: '#04060A', display: 'flex', flexDirection: 'row', zIndex:1 }}>
           <Divider orientation="horizontal" sx={{
             marginLeft: 4, marginBottom: '2em', borderRightWidth: 2,
             bgcolor: '#2E3F4C'

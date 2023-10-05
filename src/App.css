@@ -17,6 +17,7 @@
 .clickableLogo{
   display:block;
   margin-left: 2em;
+  z-index: 1;
 }
 @media screen and (min-width: 1029px){
   .logo {

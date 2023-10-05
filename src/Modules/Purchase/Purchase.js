@@ -8,6 +8,7 @@ import WhiteLogo from '../../Assets/Logo/Logo(White).png'
 import InfoIcon from '@mui/icons-material/Info';
 import './Purchase.css'
 import { useState } from 'react';
+import { Zoom } from "react-awesome-reveal";
 const options = { method: 'GET' };
 
 async function checkEmailValidity(email) {
@@ -37,7 +38,7 @@ const OnestFont = createTheme({
 });
 export default function Purchase() {
     const [isLoading, setisLoading] = useState(false)
-    
+
     const delay = (delayInms) => {
         return new Promise(resolve => setTimeout(resolve, delayInms));
     }
@@ -46,10 +47,10 @@ export default function Purchase() {
         var data = Array.from(document.querySelectorAll('#purchaseForm input'))
         let emailData = await checkEmailValidity(data[0].value)
         console.log(emailData.deliverability)
-        if(emailData.deliverability==="DELIVERABLE"){
+        if (emailData.deliverability === "DELIVERABLE") {
             setisLoading(false)
         }
-        else{
+        else {
             await delay(2000)
             setisLoading(false)
         }
@@ -60,60 +61,67 @@ export default function Purchase() {
                 marginLeft: 4, borderRightWidth: 2,
                 bgcolor: '#6C757D'
             }} />
-            <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4  }}>
-                <Box sx={{
-                    display: 'flex', flexDirection: 'row',
-                    bgcolor: '#16202B', width: '40em', height: '10em', justifyContent: 'space-around', borderRadius: 2, alignItems: 'center'
-                }}>
-                    <img className='logoWhite' src={WhiteLogo} alt='Userly(white)'></img><ThemeProvider theme={Leaguefont}><Typography sx={{ fontSize: '2em', mt: '0.3em' }} color='white'>$5.00</Typography></ThemeProvider>
-                </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                    <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
-                        After purchase has been made email will be sent for download</Typography></ThemeProvider>
-                </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#95AEAF', width: '30em', height: '30em', justifyContent: 'space-evenly', alignContent: 'space-evenly' }}>
-                    <form id='purchaseForm' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignContent: 'space-evenly', height: '100%' }}>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                            <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Email Address:</Typography></ThemeProvider>
-                            <TextField variant='standard' name='email' id="email" className='styledInput' placeholder='johndoe@gmail.com'
-                                
-                            />
-                        </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                            <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Card Number:</Typography></ThemeProvider>
-                            <TextField variant='standard' name='cardNum' id="cardNum" className='styledInput'
-                                type="tel" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" ></TextField>
-                        </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                            <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Exp Date:</Typography></ThemeProvider>
-                            <TextField sx={{maxWidth: '100px'}} variant='standard' name='expDate' id="expDate" className='styledInputLimited' placeholder='xx/xxxx'
-                                
-                            />
+            <div id='dot16' className='backroundHoversU'></div>
+            <div id='dot17' className='backroundHoversM'></div>
+            <div id='dot18' className='backroundHoversL'></div>
+            <div id='dot19' className='backroundHoversH'></div>
+            <div id='dot20' className='backroundHoversU'></div>
+            <Zoom style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4 }}>
+                    <Box sx={{
+                        display: 'flex', flexDirection: 'row',
+                        bgcolor: '#16202B', width: '40em', height: '10em', justifyContent: 'space-around', borderRadius: 2, alignItems: 'center', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px'
+                    }}>
+                        <img className='logoWhite' src={WhiteLogo} alt='Userly(white)'></img><ThemeProvider theme={Leaguefont}><Typography sx={{ fontSize: '2em', mt: '0.3em' }} color='white'>$5.00</Typography></ThemeProvider>
+                    </Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                        <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
+                            After purchase has been made email will be sent for download</Typography></ThemeProvider>
+                    </Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#95AEAF', width: '30em', height: '30em', justifyContent: 'space-evenly', alignContent: 'space-evenly', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px' }}>
+                        <form id='purchaseForm' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignContent: 'space-evenly', height: '100%' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Email Address:</Typography></ThemeProvider>
+                                <TextField variant='standard' name='email' id="email" className='styledInput' placeholder='johndoe@gmail.com'
 
-                            <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>CCV:</Typography></ThemeProvider>
-                            <TextField sx={{maxWidth: '100px'}} variant='standard' name='CCV' id="CCV" className='styledInputLimited' placeholder='xxx'
-                                
-                            />
+                                />
+                            </Box>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Card Number:</Typography></ThemeProvider>
+                                <TextField variant='standard' name='cardNum' id="cardNum" className='styledInput'
+                                    type="tel" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" ></TextField>
+                            </Box>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Exp Date:</Typography></ThemeProvider>
+                                <TextField sx={{ maxWidth: '100px' }} variant='standard' name='expDate' id="expDate" className='styledInputLimited' placeholder='xx/xxxx'
 
-                        </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                            <LoadingButton variant='contained' sx={{
-                                borderRadius: 6,
-                                backgroundColor: pallete.darkBlue,
-                                ':hover': {
-                                    bgcolor: '#06080A',
-                                    color: 'white'
-                                }, fontSize: 100, width: 225, height: 70
-                            }} onClick={validatePurchaseData} loading={isLoading}><ThemeProvider theme={Leaguefont}>
-                                    <Typography>Purchase</Typography> </ThemeProvider></LoadingButton>
-                        </Box>
-                    </form>
+                                />
+
+                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>CCV:</Typography></ThemeProvider>
+                                <TextField sx={{ maxWidth: '100px' }} variant='standard' name='CCV' id="CCV" className='styledInputLimited' placeholder='xxx'
+
+                                />
+
+                            </Box>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                                <LoadingButton variant='contained' sx={{
+                                    borderRadius: 6,
+                                    backgroundColor: pallete.darkBlue,
+                                    ':hover': {
+                                        bgcolor: '#06080A',
+                                        color: 'white'
+                                    }, fontSize: 100, width: 225, height: 70
+                                }} onClick={validatePurchaseData} loading={isLoading}><ThemeProvider theme={Leaguefont}>
+                                        <Typography>Purchase</Typography> </ThemeProvider></LoadingButton>
+                            </Box>
+                        </form>
+                    </Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', mb: '5em', }}>
+                        <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
+                            May take a little bit, if card is valid, email will be sent</Typography></ThemeProvider>
+                    </Box>
                 </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'row', mb: '5em', }}>
-                    <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
-                        May take a little bit, if card is valid, email will be sent</Typography></ThemeProvider>
-                </Box>
-            </Box>
+            </Zoom>
         </Box>
     )
 };

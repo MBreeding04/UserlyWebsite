@@ -1,10 +1,10 @@
 import Divider from '@mui/material/Divider';
-import { Box, Button } from '@mui/material';
+import { Box} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import InfoIcon from '@mui/icons-material/Info';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { useState } from 'react';
+import { Slide } from "react-awesome-reveal";
+import './F.A.Q.css'
 
 const pallete = {
     aqua: '#4B636D',
@@ -30,6 +30,11 @@ export default function FAQ() {
                 marginLeft: 4, borderRightWidth: 2,
                 bgcolor: '#6C757D'
             }} />
+            <div id='dot6' className='backroundHoversU'></div>
+            <div id='dot7' className='backroundHoversM'></div>
+            <div id='dot8' className='backroundHoversL'></div>
+            <div id='dot9' className='backroundHoversH'></div>
+            <div id='dot10' className='backroundHoversU'></div>
             <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'center', alignContent: 'center', mt: '5em', mr:4 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                     <ThemeProvider theme={Leaguefont}><Typography fontSize={'66px'}>Questions?</Typography></ThemeProvider>
@@ -46,8 +51,9 @@ export default function FAQ() {
                             <Typography>Submit</Typography> </ThemeProvider>
                     </LoadingButton>
                 </Box>
+                <Slide cascade={true} damping={0.02}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', alignContent: 'center', justifyContent: 'center', }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center'}}>
                             <ThemeProvider theme={Leaguefont}><Typography align='center' sx={{ margin: '1em', flexShrink: '1', width:'200px' }} fontSize='30px' color='white'>
                                 What accounts can I use with Userly?
@@ -63,7 +69,7 @@ export default function FAQ() {
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', alignContent: 'center', justifyContent: 'center', }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' }}>
                             <ThemeProvider theme={Leaguefont}><Typography align='center' sx={{ margin: '1em', flexShrink: '1', width:'200px' }} fontSize='30px' color='white'>
                                 How do I submit my RIOT account?
@@ -81,7 +87,7 @@ export default function FAQ() {
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', alignContent: 'center', justifyContent: 'center', }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center'}}>
                             <ThemeProvider theme={Leaguefont}><Typography align='center' sx={{ margin: '1em', flexShrink: '1', width:'200px' }} fontSize='30px' color='white'>
                                 Can i get hacked?
@@ -98,7 +104,7 @@ export default function FAQ() {
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', alignContent: 'center', justifyContent: 'center', mb: '5em' }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center'}}>
                             <ThemeProvider theme={Leaguefont}><Typography align='center' sx={{ margin: '1em', flexShrink: '1', width:'200px' }} fontSize='30px' color='white'>
                                 Do you work for Riot?
@@ -114,6 +120,7 @@ export default function FAQ() {
                         </Box>
                     </Box>
                 </Box>
+                </Slide>
             </Box>
         </Box >
     )
