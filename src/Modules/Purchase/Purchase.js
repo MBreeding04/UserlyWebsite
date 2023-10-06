@@ -125,7 +125,7 @@ export default function Purchase() {
         setisLoading(true)
         var data = Array.from(document.querySelectorAll('#purchaseForm input'))
         let emailData = await checkEmailValidity(data[0].value)
-        {/*emailData.deliverability will give you the deliverability status, since this is a demo website no actual data needs to be processed*/ }
+        /*emailData.deliverability will give you the deliverability status, since this is a demo website no actual data needs to be processed*/ 
         if (emailData.deliverability === "DELIVERABLE") {
             await delay(2000)
             setisLoading(false)

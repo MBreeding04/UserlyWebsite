@@ -95,7 +95,7 @@ export default function FAQ() {
                         <Box sx={{ display: 'flex', flexDirection: 'row', bgcolor: pallete.aqua, justifyContent: 'center', borderRadius: '5px', maxWidth: '1100px', alignContent: 'center', mb: '1em', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' }}>
                                 <ThemeProvider theme={Leaguefont}><Typography align='center' sx={{ margin: '1em', flexShrink: '1', width: '200px' }} fontSize='30px' color='white'>
-                                    Can i get hacked?
+                                    Can I get hacked?
                                 </Typography>
                                 </ThemeProvider>
                             </Box>

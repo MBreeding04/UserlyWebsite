@@ -1,5 +1,5 @@
 import Divider from '@mui/material/Divider';
-import { Box, IconButton } from '@mui/material';
+import { Box} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -66,8 +66,8 @@ export default function Contact() {
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                             <ThemeProvider theme={Leaguefont}>
-                                <GitHubIcon sx={{ fontSize: '40px',m:1 }}></GitHubIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>MBreeding04</Typography>
-                                <LinkedInIcon sx={{ fontSize: '40px',m:1 }}></LinkedInIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>Matthew Breeding</Typography>
+                                <GitHubIcon sx={{ fontSize: '40px',m:1 }}></GitHubIcon><a className='hyperlinks' href='https://github.com/MBreeding04'><Typography color={'white'} sx={{ mt: '1.1em' }}>MBreeding04</Typography></a>
+                                <LinkedInIcon sx={{ fontSize: '40px',m:1 }}></LinkedInIcon><a className='hyperlinks' href='https://www.linkedin.com/in/matthew-breeding-1a5182289/'><Typography color={'white'} sx={{ mt: '1.1em' }}>Matthew Breeding</Typography></a>
                                 <PhoneIcon sx={{ fontSize: '40px',m:1 }}></PhoneIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>Available upon request</Typography>
                                 <MailIcon sx={{ fontSize: '40px',m:1 }}></MailIcon><Typography color={'white'} sx={{ mt: '1.1em' }}>03mattman@gmail.com</Typography>
                             </ThemeProvider>
