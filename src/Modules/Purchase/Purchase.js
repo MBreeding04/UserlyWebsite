@@ -38,6 +38,85 @@ const OnestFont = createTheme({
 });
 export default function Purchase() {
     const [isLoading, setisLoading] = useState(false)
+    const [EerrMessage, setEerrMessage] = useState('')
+    const [EvalidColor, setEValidColor] = useState('#F5F5F5')
+    const [CvalidColor, setCValidColor] = useState('#F5F5F5')
+    const [EXPvalidColor, setEXPValidColor] = useState('#F5F5F5')
+    const [CCVvalidColor, setCCVValidColor] = useState('#F5F5F5')
+    const [cardValue, setCardValue] = useState('')
+    const [EXPValue, setEXPValue] = useState('')
+    const [CCVValue, setCCVValue] = useState('')
+    const [CerrMessage, setCerrMessage] = useState('')
+    const [CCVerrMessage, setCCVerrMessage] = useState('')
+    const [EXPerrMessage, setEXPerrMessage] = useState('')
+
+
+    const ifEmail = (e) => {
+        const format = /[@]/
+        if (RegExp(format).test(e.target.value) === true) {
+            setEerrMessage('')
+            setEValidColor('#F5F5F5')
+        }
+        else {
+            setEerrMessage('please enter a valid email address')
+            setEValidColor('#f44336')
+        }
+    }
+
+    const ConlyNums = (e) => {
+        const format = /[a-z]/
+        const format2 = /[0-9]{17}/
+        if (RegExp(format).test(e.target.value)) {
+            setCerrMessage('please only input numbers')
+            setCValidColor('#f44336')
+        }
+        else {
+            if (RegExp(format2).test(e.target.value)) {
+            }
+            else {
+
+
+                setCardValue(e.target.value)
+                setCerrMessage('')
+                setCValidColor('#F5F5F5')
+            }
+        }
+    }
+    const CCVonlyNums = (e) => {
+        const format = /[a-z]/
+        const format2 = /[0-9]{4}/
+        if (RegExp(format).test(e.target.value)) {
+            setCCVerrMessage('please only input numbers')
+            setCCVValidColor('#f44336')
+        }
+        else {
+            if (RegExp(format2).test(e.target.value)) {
+            }
+            else {
+                setCCVValue(e.target.value)
+                setCCVerrMessage('')
+                setCCVValidColor('#F5F5F5')
+            }
+        }
+    }
+    const ExponlyNums = (e) => {
+        const format = /[a-z]/
+        const format4 = /[0-9]{5}/
+        if (RegExp(format).test(e.target.value)) {
+            setEXPerrMessage('please only input numbers')
+            setEXPValidColor('#f44336')
+        }
+        else {
+            if (RegExp(format4).test(e.target.value)) {
+
+            }
+            else {
+                setEXPValue(e.target.value)
+                setEXPerrMessage('')
+                setEXPValidColor('#F5F5F5')
+            }
+        }
+    }
 
     const delay = (delayInms) => {
         return new Promise(resolve => setTimeout(resolve, delayInms));
@@ -46,8 +125,9 @@ export default function Purchase() {
         setisLoading(true)
         var data = Array.from(document.querySelectorAll('#purchaseForm input'))
         let emailData = await checkEmailValidity(data[0].value)
-        console.log(emailData.deliverability)
+        {/*emailData.deliverability will give you the deliverability status, since this is a demo website no actual data needs to be processed*/ }
         if (emailData.deliverability === "DELIVERABLE") {
+            await delay(2000)
             setisLoading(false)
         }
         else {
@@ -59,7 +139,7 @@ export default function Purchase() {
         <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             <Divider orientation="horizontal" sx={{
                 marginLeft: 4, borderRightWidth: 2,
-                bgcolor: '#6C757D', zIndex:1
+                bgcolor: '#6C757D', zIndex: 1
             }} />
             <div id='dot16' className='backroundHoversU'></div>
             <div id='dot17' className='backroundHoversM'></div>
@@ -82,23 +162,53 @@ export default function Purchase() {
                         <form id='purchaseForm' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignContent: 'space-evenly', height: '100%' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                                 <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Email Address:</Typography></ThemeProvider>
-                                <TextField variant='standard' name='email' id="email" className='styledInput' placeholder='johndoe@gmail.com'
+                                <TextField sx={{
+                                    fontSize: '20px', '& label.Mui-focused': {
+                                        color: `${EvalidColor}`,
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: `${EvalidColor}`,
+                                    }
+                                }} helperText={EerrMessage} onChange={ifEmail}
+                                    variant='standard' name='email' id="email" className='styledInput' placeholder='johndoe@gmail.com'
 
                                 />
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                                 <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Card Number:</Typography></ThemeProvider>
-                                <TextField variant='standard' name='cardNum' id="cardNum" className='styledInput'
-                                    type="tel" pattern="[0-9\s]{13,19}" placeholder="xxxx xxxx xxxx xxxx" ></TextField>
+                                <TextField sx={{
+                                    fontSize: '20px', '& label.Mui-focused': {
+                                        color: `${CvalidColor}`,
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: `${CvalidColor}`,
+                                    }
+                                }} value={cardValue} onChange={ConlyNums} helperText={CerrMessage} variant='standard' name='cardNum' id="cardNum" className='styledInput'
+                                    type="tel" pattern="[0-9\s]{13,19}" placeholder="xxxxxxxxxxxxxxxx" ></TextField>
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                                 <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Exp Date:</Typography></ThemeProvider>
-                                <TextField sx={{ maxWidth: '100px' }} variant='standard' name='expDate' id="expDate" className='styledInputLimited' placeholder='xx/xxxx'
+                                <TextField sx={{
+                                    maxWidth: '100px', fontSize: '20px', '& label.Mui-focused': {
+                                        color: `${EXPvalidColor}`,
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: `${EXPvalidColor}`,
+                                    }
+                                }} onChange={ExponlyNums} value={EXPValue} helperText={EXPerrMessage} variant='standard' name='expDate' id="expDate" className='styledInputLimited' placeholder='xx/xxxx'
 
                                 />
 
                                 <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>CCV:</Typography></ThemeProvider>
-                                <TextField sx={{ maxWidth: '100px' }} variant='standard' name='CCV' id="CCV" className='styledInputLimited' placeholder='xxx'
+                                <TextField sx={{
+                                    maxWidth: '100px', fontSize: '20px', '& label.Mui-focused': {
+                                        color: `${CCVvalidColor}`,
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: `${CCVvalidColor}`,
+                                    }
+
+                                }} onChange={CCVonlyNums} value={CCVValue} helperText={CCVerrMessage} variant='standard' name='CCV' id="CCV" className='styledInputLimited' placeholder='xxx'
 
                                 />
 
