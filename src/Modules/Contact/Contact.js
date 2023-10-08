@@ -29,7 +29,7 @@ const OnestFont = createTheme({
 });
 export default function Contact() {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', height: 973, mr: 4 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100vh', mr: 4 }}>
             {/*height is only set because content does not fill up entire page, so we force it to fill up page*/}
             <Divider orientation="horizontal" sx={{
                 marginLeft: 4, borderRightWidth: 2,

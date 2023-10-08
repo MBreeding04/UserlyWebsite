@@ -39,7 +39,7 @@ const pallete = {
 }
 function App() {
   return (
-    <SimpleBar style={{ maxHeight: window.innerHeight }}>
+    <SimpleBar style={{ maxHeight: '100vh' }}>
       <div className='Main-content'>
         <HashRouter>
           <div className='NavBar'>
@@ -79,10 +79,10 @@ function App() {
                   minWidth: 125
                 }}><Typography fontSize={20}>Purchase</Typography></Button></NavLink>
             </ThemeProvider>
-            <IconButton href='https://github.com/MBreeding04'>
+            <IconButton href='https://github.com/MBreeding04' target="_blank">
               <GitHubIcon fontSize='large'></GitHubIcon>
             </IconButton>
-            <IconButton href='https://www.linkedin.com/in/matthew-breeding-1a5182289/'>
+            <IconButton href='https://www.linkedin.com/in/matthew-breeding-1a5182289/' target="_blank">
               <LinkedInIcon fontSize='large'></LinkedInIcon>
             </IconButton>
           </div>

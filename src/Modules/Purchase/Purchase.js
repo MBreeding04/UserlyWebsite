@@ -125,7 +125,7 @@ export default function Purchase() {
         setisLoading(true)
         var data = Array.from(document.querySelectorAll('#purchaseForm input'))
         let emailData = await checkEmailValidity(data[0].value)
-        /*emailData.deliverability will give you the deliverability status, since this is a demo website no actual data needs to be processed*/ 
+        /*emailData.deliverability will give you the deliverability status, since this is a demo website no actual data needs to be processed*/
         if (emailData.deliverability === "DELIVERABLE") {
             await delay(2000)
             setisLoading(false)
@@ -146,38 +146,108 @@ export default function Purchase() {
             <div id='dot18' className='backroundHoversL'></div>
             <div id='dot19' className='backroundHoversH'></div>
             <div id='dot20' className='backroundHoversU'></div>
-            <Zoom style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4 }}>
+            <Zoom style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4, justifyContent: 'center', alignContent: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', mt: '5em', mr: 4, justifyContent: 'center', alignContent: 'center' }}>
                     <Box sx={{
+                        '@media screen and (min-width: 1920px)': {
+                            width: '40em', height: '10em'
+                        },
+                        '@media screen and (min-width: 2560px)': {
+                            width: '60em', height: '10em'
+                        },
                         display: 'flex', flexDirection: 'row',
-                        bgcolor: '#16202B', width: '40em', height: '10em', justifyContent: 'space-around', borderRadius: 2, alignItems: 'center', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px'
+                        bgcolor: '#16202B', justifyContent: 'space-around', borderRadius: 2, alignItems: 'center', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px'
                     }}>
-                        <img className='logoWhite' src={WhiteLogo} alt='Userly(white)'></img><ThemeProvider theme={Leaguefont}><Typography sx={{ fontSize: '2em', mt: '0.3em' }} color='white'>$5.00</Typography></ThemeProvider>
+                        <img className='logoWhite' src={WhiteLogo} alt='Userly(white)'></img><ThemeProvider theme={Leaguefont}><Typography sx={{
+                            '@media screen and (min-width: 1920px)': {
+                                fontSize: '2em'
+                            },
+                            '@media screen and (min-width: 2560px)': {
+                                fontSize: '3em'
+                            }, mt: '0.3em'
+                        }} color='white'>$5.00</Typography></ThemeProvider>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                        <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
+                        <InfoIcon sx={{
+                            mt: 1, mr: 1, mb: 1,
+                            '@media screen and (min-width: 1920px)': {
+                                fontSize: '1.5em'
+                            },
+                            '@media screen and (min-width: 2560px)': {
+                                fontSize: '2.5em'
+                            },
+                        }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{
+                            mt: 1,
+                            '@media screen and (min-width: 1920px)': {
+                                fontSize: '1em'
+                            },
+                            '@media screen and (min-width: 2560px)': {
+                                fontSize: '1.5em'
+                            }
+                        }}>
                             After purchase has been made email will be sent for download</Typography></ThemeProvider>
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#95AEAF', width: '30em', height: '30em', justifyContent: 'space-evenly', alignContent: 'space-evenly', boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px' }}>
+                    <Box sx={{
+                        display: 'flex', flexDirection: 'column', bgcolor: '#95AEAF', justifyContent: 'space-evenly', alignContent: 'space-evenly',
+                        boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
+                        '@media screen and (min-width: 1920px)': {
+                            width: '30em', height: '30em'
+                        },
+                        '@media screen and (min-width: 2560px)': {
+                            width: '45em', height: '45em'
+                        }
+                    }}>
                         <form id='purchaseForm' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignContent: 'space-evenly', height: '100%' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Email Address:</Typography></ThemeProvider>
+                                <ThemeProvider theme={Leaguefont}><Typography sx={{
+                                    '@media screen and (min-width: 1920px)': {
+                                        fontSize:'25px'
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        fontSize:'35px'
+                                    }
+                                }}>Email Address:</Typography></ThemeProvider>
                                 <TextField sx={{
-                                    fontSize: '20px', '& label.Mui-focused': {
+                                    '@media screen and (min-width: 1920px)': {
+                                        width:'200px',
+                                        '.MuiInputBase-input': { fontSize: '1.25rem' },
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        width:'300px',
+                                        '.MuiInputBase-input': { fontSize: '1.5rem' },
+                                        '.MuiFormHelperText-root':{ fontSize:'1.2rem'}
+                                    },
+                                    '& label.Mui-focused': {
                                         color: `${EvalidColor}`,
                                     },
                                     '& .MuiInput-underline:after': {
                                         borderBottomColor: `${EvalidColor}`,
                                     }
+                                    
                                 }} helperText={EerrMessage} onChange={ifEmail}
                                     variant='standard' name='email' id="email" className='styledInput' placeholder='johndoe@gmail.com'
 
                                 />
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Card Number:</Typography></ThemeProvider>
-                                <TextField sx={{
-                                    fontSize: '20px', '& label.Mui-focused': {
+                                <ThemeProvider theme={Leaguefont}><Typography sx={{
+                                    '@media screen and (min-width: 1920px)': {
+                                        fontSize:'25px'
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        fontSize:'35px'
+                                    }
+                                }}>Card Number:</Typography></ThemeProvider>
+                                <TextField sx={{'@media screen and (min-width: 1920px)': {
+                                        width:'200px',
+                                        '.MuiInputBase-input': { fontSize: '1.25rem' },
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        width:'300px',
+                                        '.MuiInputBase-input': { fontSize: '1.5rem' },
+                                        '.MuiFormHelperText-root':{ fontSize:'1.2rem'}
+                                    },
+                                    '& label.Mui-focused': {
                                         color: `${CvalidColor}`,
                                     },
                                     '& .MuiInput-underline:after': {
@@ -187,21 +257,54 @@ export default function Purchase() {
                                     type="tel" pattern="[0-9\s]{13,19}" placeholder="xxxxxxxxxxxxxxxx" ></TextField>
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>Exp Date:</Typography></ThemeProvider>
+                                <ThemeProvider theme={Leaguefont}><Typography sx={{
+                                    '@media screen and (min-width: 1920px)': {
+                                        fontSize:'25px'
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        fontSize:'35px'
+                                    }
+                                }}>Exp Date:</Typography></ThemeProvider>
                                 <TextField sx={{
-                                    maxWidth: '100px', fontSize: '20px', '& label.Mui-focused': {
+                                    '@media screen and (min-width: 1920px)': {
+                                        width:'100px',
+                                        '.MuiInputBase-input': { fontSize: '1.25rem' },
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        width:'150px',
+                                        '.MuiInputBase-input': { fontSize: '1.5rem' },
+                                        '.MuiFormHelperText-root':{ fontSize:'1.2rem'}
+                                    },
+                                    fontSize: '20px', '& label.Mui-focused': {
                                         color: `${EXPvalidColor}`,
                                     },
                                     '& .MuiInput-underline:after': {
                                         borderBottomColor: `${EXPvalidColor}`,
                                     }
-                                }} onChange={ExponlyNums} value={EXPValue} helperText={EXPerrMessage} variant='standard' name='expDate' id="expDate" className='styledInputLimited' placeholder='xx/xxxx'
+                                }} onChange={ExponlyNums} value={EXPValue} helperText={EXPerrMessage} variant='standard' name='expDate' id="expDate" className='styledInputLimited' 
+                                placeholder='xx/xxxx'
 
                                 />
 
-                                <ThemeProvider theme={Leaguefont}><Typography fontSize={'25px'}>CCV:</Typography></ThemeProvider>
-                                <TextField sx={{
-                                    maxWidth: '100px', fontSize: '20px', '& label.Mui-focused': {
+                                <ThemeProvider theme={Leaguefont}><Typography sx={{
+                                    '@media screen and (min-width: 1920px)': {
+                                        fontSize:'25px'
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        fontSize:'35px'
+                                    }
+                                }}>CCV:</Typography></ThemeProvider>
+                                <TextField sx={{ 
+                                    '@media screen and (min-width: 1920px)': {
+                                        width:'100px',
+                                        '.MuiInputBase-input': { fontSize: '1.25rem' },
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        width:'150px',
+                                        '.MuiInputBase-input': { fontSize: '1.5rem' },
+                                        '.MuiFormHelperText-root':{ fontSize:'1.2rem'}
+                                    },
+                                    '& label.Mui-focused': {
                                         color: `${CCVvalidColor}`,
                                     },
                                     '& .MuiInput-underline:after': {
@@ -215,19 +318,41 @@ export default function Purchase() {
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                                 <LoadingButton variant='contained' sx={{
+                                    '@media screen and (min-width: 1920px)': {
+                                        fontSize:'100px'
+                                    },
+                                    '@media screen and (min-width: 2560px)': {
+                                        fontSize:'150px'
+                                    },
                                     borderRadius: 6,
                                     backgroundColor: pallete.darkBlue,
                                     ':hover': {
                                         bgcolor: '#06080A',
                                         color: 'white'
-                                    }, fontSize: 100, width: 225, height: 70
+                                    }, width: 225, height: 70
                                 }} onClick={validatePurchaseData} loading={isLoading}><ThemeProvider theme={Leaguefont}>
                                         <Typography>Purchase</Typography> </ThemeProvider></LoadingButton>
                             </Box>
                         </form>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'row', mb: '5em', }}>
-                        <InfoIcon sx={{ mt: 1, mr: 1, mb: 1, fontSize: '1.5em' }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{ mt: 1 }}>
+                        <InfoIcon sx={{
+                            mt: 1, mr: 1, mb: 1,
+                            '@media screen and (min-width: 1920px)': {
+                                fontSize: '1.5em'
+                            },
+                            '@media screen and (min-width: 2560px)': {
+                                fontSize: '2.5em'
+                            }
+                        }}></InfoIcon><ThemeProvider theme={OnestFont}><Typography sx={{
+                            mt: 1,
+                            '@media screen and (min-width: 1920px)': {
+                                fontSize: '1em'
+                            },
+                            '@media screen and (min-width: 2560px)': {
+                                fontSize: '1.5em'
+                            }
+                        }}>
                             May take a little bit, if card is valid, email will be sent</Typography></ThemeProvider>
                     </Box>
                 </Box>
